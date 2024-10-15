@@ -19,7 +19,7 @@ export default function HomePage() {
 
   return (
     <ProtectedRoute>
-      <main className="container mx-auto p-8 min-h-screen dark:bg-black">
+      <main className="container mx-auto p-8 min-h-screen max-w-full dark:bg-black">
         <h1 className="text-4xl font-bold dark:text-white">Lista de Tareas</h1>
         <TaskForm />
         <TaskList />
