@@ -18,23 +18,23 @@ export default function LoginPage() {
 
     return (
         <main className="container mx-auto p-8">
-            <h1 className="text-4xl font-bold">Iniciar Sesión</h1>
-            <form onSubmit={handleSubmit} className="mt-4">
+            <h1 className="text-4xl font-bold text-center">Iniciar Sesión</h1>
+            <form onSubmit={handleSubmit} className="mt-4 flex flex-col gap-6 mx-auto max-w-80 ">
                 <input
                     type="text"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
-                    className="block w-full p-2 border rounded mt-2"
+                    className="input input-bordered input-success w-full "
                     placeholder="Usuario"
                 />
                 <input
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="block w-full p-2 border rounded mt-2"
+                    className="input input-bordered input-success w-full "
                     placeholder="Contraseña"
                 />
-                <button type="submit" className="p-2 bg-blue-500 text-white rounded mt-4">
+                <button type="submit" className="btn btn-neutral">
                     Ingresar
                 </button>
             </form>

@@ -23,13 +23,7 @@ export default function HomePage() {
         <h1 className="text-4xl font-bold">Lista de Tareas</h1>
         <TaskForm />
         <TaskList />
-        <button
-          type="button"
-          className="p-2 bg-blue-500 text-white rounded mt-4"
-          onClick={(e) => handleSubmit(e)}
-        >
-          Logout
-        </button>
+        <button className="btn btn-neutral" onClick={(e) => handleSubmit(e)}>Logout</button>
       </main>
     </ProtectedRoute>
   );

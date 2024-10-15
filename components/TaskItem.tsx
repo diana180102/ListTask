@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useContext, useState, useRef } from 'react';
-import { TaskContext } from '../context/TaskContext';
+import { useContext, useState, useRef } from "react";
+import { TaskContext } from "../context/TaskContext";
 
 interface Task {
   id: number;
@@ -16,37 +16,39 @@ export default function TaskItem({ task }: { task: Task }) {
 
   return (
     <li
-      className={`p-4 bg-white shadow rounded flex justify-between items-center ${task.completed ? 'line-through text-gray-500' : ''
-        }`}
+      className={`p-4 bg-white  shadow-md rounded hover:bg-zinc-200  flex justify-between items-center ${
+        task.completed ? "line-through text-gray-500" : ""
+      }`}
     >
-      {isEditing ?
+      {isEditing ? (
         <input
           type="text"
-          className="flex-grow p-2 border rounded-l"
+          className="input input-bordered input-info w-full mx-2 "
           ref={editInput}
           defaultValue={task.title}
           onKeyDown={(e) => {
             if (e.key === "Enter" && editInput.current) {
-              editTask(task.id, editInput.current.value)
-              setIsEditing(false)
+              editTask(task.id, editInput.current.value);
+              setIsEditing(false);
             }
           }}
         />
-        :
+      ) : (
         <span onClick={() => toggleTask(task.id)} className="cursor-pointer">
           {task.title}
         </span>
-      }
-      <div className='mx-4'>
+      )}
+      <div className="flex flex-row gap-2 ">
         <button
           onClick={() => setIsEditing(!isEditing)}
-          className="text-yellow-600 hover:text-yellow-900 mr-4"
+          className="btn btn-active btn-accent text-white"
         >
-          Editar
+         {isEditing ? 'Cancelar' : 'Editar'} 
         </button>
+
         <button
           onClick={() => deleteTask(task.id)}
-          className="text-red-500 hover:text-red-700"
+          className="btn btn-active btn-primary"
         >
           Eliminar
         </button>

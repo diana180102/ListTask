@@ -20,12 +20,11 @@ export default function TaskForm() {
         type="text"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        className="flex-grow p-2 border rounded-l"
+        className="input input-bordered input-success w-full "
         placeholder="Nueva tarea"
       />
-      <button type="submit" className="p-2 bg-blue-500 text-white rounded-r">
-        Añadir
-      </button>
+      
+      <button type='submit' className="btn btn-success text-white mx-4">Añadir</button>
     </form>
   );
 }
