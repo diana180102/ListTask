@@ -17,8 +17,8 @@ export default function LoginPage() {
     };
 
     return (
-        <main className="container mx-auto p-8">
-            <h1 className="text-4xl font-bold text-center">Iniciar Sesión</h1>
+        <main className="container mx-auto p-8 min-h-screen dark:bg-black">
+            <h1 className="text-4xl font-bold text-center dark:text-white">Iniciar Sesión</h1>
             <form onSubmit={handleSubmit} className="mt-4 flex flex-col gap-6 mx-auto max-w-80 ">
                 <input
                     type="text"
